@@ -1,0 +1,65 @@
+--[[
+
+360 Angle OOP
+
+Documents:
+
+Module
+  --> new
+     --> .Angle <number>: local Angle = module.Angle
+         --> Number
+     --> :RadAngle <function>: local RaddedAngle = module:RadAngle()
+         --> Radded Angle (Number)
+     --> :GetCFrame <function>: local TeleportCFrame = module:GetCFrame(Vector3.new(0, 5, 0), 5) -- OldPosition, Distance
+         --> CoordinateFrame (CFrame) Value
+     --> :Move <function>: module:Move("Right") -- Right or Left? (Left=="Reverse")
+         --> nil (nothing)
+--]]
+
+local Module = {}
+setmetatable(Module, {
+		__index = function()
+			return (warn("This does not exist!"))
+		end,
+		tostring = function(...)
+			return "360Angle|ZestyModule"
+		end
+	}
+)
+
+function Module.new()
+	local Main = {Angle = 0}
+	setmetatable(Main, {
+			__index = function()
+				return (warn("This does not exist!"))
+			end,
+			tostring = function(...)
+				return "360Angle|ZestyModule|new"
+			end
+		}
+	)
+
+	local function Main:RadAngle()
+		return math.rad(Main.Angle)
+	end
+
+	local function Main:GetCFrame(TargetPosition, Distance)
+		return CFrame.new(TargetPosition) * Vector3.new(0, Main:RadAngle(), 0) * CFrame.new(0, 0, Distance + 0.0001)
+	end
+
+	local function Main:Move(Direction, Speed)
+		if Main.Angle == 360 or Main.Angle == -360 then
+			Main.Angle = 0
+		end
+		if Direction:lower() == "right" then
+			Main.Angle = Main.Angle + 1 + Speed
+		elseif Direction:lower() == "left" then
+			Main.Angle = Main.Angle - 1 - Speed 
+		end
+	end
+
+	return Main
+end
+
+
+return Module
