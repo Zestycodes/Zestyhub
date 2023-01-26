@@ -6,6 +6,7 @@ if not isfolder("zestyhub") then
 	task.wait(2);
 	rconsoleprint("Complete! Running zestyhub in 1 second.")
 	wait(1)
+	rconsoleclose()
 end
 local zestyhub = {
 	getfile = function(path)
