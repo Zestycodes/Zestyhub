@@ -2,7 +2,7 @@ if not isfolder("zestyhub") then
 	-- If not found zestyhub, fix!
 	rconsolename("ZESTY HUB")
 	rconsoleprint("Zesty hub was not installed properly, reinstalling...\n")
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/fa899/Zestyhub/main/zestyhub-fix%20(RUN%20BEFORE%20USING).lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Zestycodes/Zestyhub/main/zestyhub-fix%20(RUN%20BEFORE%20USING).lua"))()
 	task.wait(2);
 	rconsoleprint("Complete! Running zestyhub in 1 second.")
 	wait(1)
