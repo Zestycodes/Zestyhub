@@ -10,8 +10,8 @@ function GET(a)
 end
 
 -- // URL fixes;
-local URL = "https://raw.githubusercontent.com/fa899/Zestyhub/main/"
-local URL1 = "https://raw.githubusercontent.com/fa899/Zestyhub/main/"
+local URL = "https://raw.githubusercontent.com/Zestycodes/Zestyhub/main/"
+local URL1 = "https://raw.githubusercontent.com/Zestycodes/Zestyhub/main/"
 
 -- // Requesting system v.2;
 local function GET1(a)
